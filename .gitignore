@@ -1,0 +1,18 @@
+# macOS clutter
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows clutter
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# General
+.fseventsd
+.TemporaryItems
