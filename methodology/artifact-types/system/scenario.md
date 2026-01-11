@@ -2,7 +2,7 @@
 
 A Scenario is an Intent artifact that describes a user/system situation a feature must support. It is implementation-agnostic and contains the behaviors and checks that Code will be validated against.
 
-- Location: `intents/system/<feature>/scenarios/<scenario>/scenario.md`
+- Location: `intents/system/<feature>/scenarios/<scenario>/scenario.md` or `intents/system/<domain>/<feature>/scenarios/<scenario>/scenario.md`
 - Role: make the feature concrete through narratives, actors, and behaviors; link to Blueprint contracts that govern the scenario.
 
 Create a scenario file with this template:

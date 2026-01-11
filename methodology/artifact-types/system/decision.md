@@ -2,7 +2,7 @@
 
 Decisions capture significant architectural or product choices and their context so Intent, Blueprint, and Code stay aligned and teams understand how to revisit them.
 
-Store them under Intent. Global decisions go in `intents/decisions/`. Feature and Scenario level decisions live under `intents/system/<feature>/decisions/` or nested scopes. Link each decision to the Intent behaviors/assurances it affects and to the Blueprint files/contracts it informs.
+Store them under Intent. Global decisions go in `intents/decisions/`. Feature and Scenario level decisions live under `intents/system/<feature>/decisions/`, `intents/system/<domain>/<feature>/decisions/`, or nested scopes. Link each decision to the Intent behaviors/assurances it affects and to the Blueprint files/contracts it informs.
 
 Write an ADR when choosing across meaningful alternatives:
 

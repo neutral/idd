@@ -6,7 +6,7 @@
 - Intent is the authoritative “what must be true”; Blueprint files are the contracts/specs for “how it will be made true.”
 - Keep Intent, Blueprint, and Code aligned as work progresses. Intent communicates the model to humans; Code runs it on machines. You can start in any layer, but reconcile changes by updating the other layers as needed.
 - Treat Code as the implementation output that must satisfy Intent and Blueprint; verify changes against both.
-- Capture definitions in `intents/blueprints/` (or feature-specific `intents/system/<feature>/blueprints/`) and decisions in `intents/decisions/` or feature-level decision folders.
+- Capture definitions in `intents/blueprints/` (or feature-specific `intents/system/<feature>/blueprints/` / `intents/system/<domain>/<feature>/blueprints/`) and decisions in `intents/decisions/` or feature-level decision folders.
 
 ## Documentation Requirements
 
