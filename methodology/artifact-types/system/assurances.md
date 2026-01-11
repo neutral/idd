@@ -37,7 +37,7 @@ Each assurance must have:
 ### Where assurance files live
 
 - Global (system-wide): `intents/system/assurances.md`
-- Feature: `intents/system/<feature>/assurances.md`
+- Feature: `intents/system/<feature>/assurances.md` or `intents/system/<domain>/<feature>/assurances.md`
 
 ### Precedence rules
 
@@ -185,7 +185,7 @@ Goal: apply the baseline explicitly, add only the necessary feature-specific con
 
 ### 2. Create feature assurance file and baseline disposition
 
-- Create `intents/system/<feature>/assurances.md`.
+- Create `intents/system/<feature>/assurances.md` or `intents/system/<domain>/<feature>/assurances.md`.
 - Add a baseline disposition section that lists every global assurance ID with:
 
   - Inherited, Overrides, or Not applicable (with rationale).

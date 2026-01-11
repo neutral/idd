@@ -20,7 +20,7 @@ Examples:
 Each Blueprint must link back to the Intent behaviors or assurances it satisfies.
 
 - Global blueprints: `intents/blueprints/**`
-- Feature-scoped blueprints: `intents/system/<feature>/blueprints/**`
+- Feature-scoped blueprints: `intents/system/<feature>/blueprints/**` or `intents/system/<domain>/<feature>/blueprints/**`
 
 Contracts must be concrete and testable (OpenAPI/JSON Schema/protobuf, structured examples). Version schemas, messages, and budgets so changes are traceable.
 

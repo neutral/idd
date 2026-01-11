@@ -2,7 +2,7 @@
 
 A Feature is an Intent artifact that defines the user outcome, scope, and scenarios the system must support. It is implementation-agnostic and sets the obligations that Blueprint and Code must satisfy.
 
-- Location: `intents/system/<feature>/feature.md`
+- Location: `intents/system/<feature>/feature.md` or `intents/system/<domain>/<feature>/feature.md`
 - Related files: `assurances.md` for feature assurances, `scenarios/**` for scenario details, `blueprints/` for feature-scoped contracts, `decisions/` for rationale.
 - Role: anchor the why and what. Behaviors, assurances, and blueprint contracts should trace back here.
 

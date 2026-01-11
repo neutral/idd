@@ -4,8 +4,8 @@ A Behavior is an Intent artifact that describes an externally observable obligat
 
 Behaviors can be stored in either form:
 
-- Inline as a section inside a scenario file (`intents/system/<feature>/scenarios/<scenario>/scenario.md`).
-- As a separate file (for example, under `intents/system/<feature>/scenarios/<scenario>/behaviors/`) when the scenario grows large or you want easier review, reuse, or parallel work.
+- Inline as a section inside a scenario file (`intents/system/<feature>/scenarios/<scenario>/scenario.md` or `intents/system/<domain>/<feature>/scenarios/<scenario>/scenario.md`).
+- As a separate file (for example, under `intents/system/<feature>/scenarios/<scenario>/behaviors/` or `intents/system/<domain>/<feature>/scenarios/<scenario>/behaviors/`) when the scenario grows large or you want easier review, reuse, or parallel work.
 
 Create a behavior file with this template:
 

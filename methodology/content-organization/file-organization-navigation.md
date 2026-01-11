@@ -2,9 +2,9 @@
 
 IDD organizes artifacts into three layers: Intent (what must be true), Blueprint (how it will be made true), and Code (the implementation output, with description files). Intent communicates the model to humans; Code runs it on machines. The layers co-evolve and can be updated in any order; the expectation is to keep cross-links and reconcile differences as you go.
 
-- Place an `intents/` folder at the repo root (or per module) for Intent artifacts (features, scenarios, behaviors, assurances, goals) and cross-cutting assets.
+- Place an `intents/` folder at the repo root for Intent artifacts (features, scenarios, behaviors, assurances, goals) and cross-cutting assets. A single root `intents/` folder is the preferred pattern even in monorepos.
 - Within `intents/`, keep a `blueprints/` folder for global contracts/glossary/definitions. Feature folders can also have their own `blueprints/` subfolder for feature-scoped contracts.
-- Decisions live under `intents/` because they drive updates across Intent + Blueprint + Code (keeping the layers in sync). Feature decisions live under the feature folder (e.g., `intents/system/<feature>/decisions/`); global decisions live in `intents/decisions/`.
+- Decisions live under `intents/` because they drive updates across Intent + Blueprint + Code (keeping the layers in sync). Feature decisions live under the feature folder (e.g., `intents/system/<feature>/decisions/` or `intents/system/<domain>/<feature>/decisions/`); global decisions live in `intents/decisions/`.
 - Description files belong to the Code layer and are colocated with source code files. They link code back to the Intent obligations and Blueprint contracts it satisfies.
 
 Use semantic, descriptive kebab-case names without IDs. Prefix intent artifact filenames with their type (feature, behavior, scenario, assurance) and Blueprint files with their type where helpful.
@@ -20,15 +20,16 @@ Both the `intents` and `blueprints` sections are hierarchical. Use the structure
     - system/
       - goals.md
       - assurances.md
-      - feature-a/
-        - feature.md
-        - assurances.md
-        - scenarios/
-          - checkout-happy-path/
-            - scenario.md
-            - assurances.md
-        - blueprints/ (feature-specific definitions)
-        - decisions/ (feature-specific decisions)
+      - commerce/
+        - checkout/
+          - feature.md
+          - assurances.md
+          - scenarios/
+            - checkout-happy-path/
+              - scenario.md
+              - assurances.md
+          - blueprints/ (feature-specific definitions)
+          - decisions/ (feature-specific decisions)
     - blueprints/ (global definitions/glossary/contracts)
     - decisions/ (global decisions/ADRs)
     - arc/
@@ -36,24 +37,32 @@ Both the `intents` and `blueprints` sections are hierarchical. Use the structure
     - \_file.desc.md (description files adjacent to code)
   - AGENTS.md
 
+## Domain Groupings
+
+Domain groupings are optional folders directly under `intents/system/` used to cluster related features by conceptual area (for example, `intents/system/commerce/checkout/`). They are most useful in large repos or monorepos with many packages where the `intents/system/` feature list would otherwise become unwieldy.
+
+- What they are: a lightweight, human-first way to browse Intent by domain.
+- Why they are not packages: they should not mirror code modules, deployment units, or ownership boundaries, and they should remain stable even when code moves.
+- Strictly organizational: do not introduce domain-level artifacts, inheritance, or policy overrides; artifacts live at the system-wide or feature level only.
+
 ## System
 
 ### Intent: Features, Scenarios, Behaviors, Assurances
 
-Organize features under `intents/system/<feature>/`. Intent is implementation-agnostic and focuses on obligations and outcomes that must be testable.
+Organize features under `intents/system/<feature>/` or `intents/system/<domain>/<feature>/`. Intent is implementation-agnostic and focuses on obligations and outcomes that must be testable.
 
 - Features describe the outcome and users served, and list the scenarios they enable.
 - Scenarios contain behaviors and checks that define externally observable system obligations.
 - Assurances declare the non-functional/quality/policy constraints that shape implementations.
-- Global assurances live in `intents/system/assurances.md`; feature assurances live under each feature; scenario-level deltas live under each scenario folder.
+- Global assurances live in `intents/system/assurances.md`; feature assurances live under each feature; scenario-level deltas live under each scenario folder. Domain folders stay empty aside from feature folders.
 
 ### Blueprint: Definitions, Decisions, Contracts
 
 Blueprint files define how Intent will be satisfied: contracts, schemas, APIs, models, glossary entries, budgets, and explainers.
 
 - Global definitions live under `intents/blueprints/`.
-- Feature-scoped definitions live under `intents/system/<feature>/blueprints/`.
-- Decisions live beside their scope (`intents/decisions/` or `intents/system/<feature>/decisions/`) and link back to the Intent behaviors/assurances they inform.
+- Feature-scoped definitions live under `intents/system/<feature>/blueprints/` or `intents/system/<domain>/<feature>/blueprints/`.
+- Decisions live beside their scope (`intents/decisions/`, `intents/system/<feature>/decisions/`, or `intents/system/<domain>/<feature>/decisions/`) and link back to the Intent behaviors/assurances they inform.
 
 ## Arc
 
