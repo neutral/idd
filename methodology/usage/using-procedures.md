@@ -3,10 +3,10 @@
 Procedures are reusable prompts. Agents run procedures to read IDD artifacts as inputs and write durable updates back as outputs.
 The goal is to avoid freeform chat: agents run procedures using context from Intent and Blueprint files and, at the end of a run, write back what matters into those artifacts (with Code as the implementation output).
 
-## Procedure libraries and packs
+## Procedure libraries
 
-The public `idd-procedures` repo is one procedure library.
-Developers can also use one or more additional procedure libraries (public or internal) and their packs (for example, to match internal standards, tools, or review workflows).
+The `library/` folder in this repo is one procedure library.
+Developers can also use one or more additional procedure libraries (public or internal) to match internal standards, tools, or review workflows.
 
 ## Local procedures in a repo
 

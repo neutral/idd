@@ -4,17 +4,16 @@ Procedures are reusable prompts that read IDD artifacts (Intent + Blueprint) and
 
 ## Use a local `.procedures/` folder
 
-Keep a local copy of the procedures and packs you use in a `.procedures/` directory at the repo root.
+Keep a local copy of the procedures you use in a `.procedures/` directory at the repo root.
 
 ## Keep it out of git
 
 Add `.procedures/` to the target repo’s `.gitignore` so procedure libraries and local edits aren’t committed to the target repo.
 
-## Get a starter library
+## Get procedures from `library/`
 
-The `idd-procedures` repo is a public library of procedures.
+The `library/` folder in this repo is a procedure library with procedures, shared guidelines, and usage docs.
 Developers can also use one or more additional procedure libraries (public or internal) and install procedures from any of them into `.procedures/` for their agent/tooling to use.
-Use packs to discover procedures within each library.
 
 ## Keep runs reproducible
 

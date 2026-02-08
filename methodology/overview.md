@@ -107,7 +107,7 @@ Procedures are reusable prompts, invoked in a standard way. Agents run procedure
 - Durable knowledge goes to intents and blueprints.
 - Planning details stay in Arc.
 
-A shared procedure library is available in the public `idd-procedures` repo.
+A shared procedure library lives in `library/` in this repo.
 Developers can also use one or more additional procedure libraries (public or internal).
 Keep a local copy of the procedures you use in a `.procedures/` directory at the repo root and add it to the repo’s `.gitignore`.
 
