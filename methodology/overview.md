@@ -109,7 +109,7 @@ Procedures are reusable prompts, invoked in a standard way. Agents run procedure
 
 A shared procedure library lives in `library/` in this repo.
 Developers can also use one or more additional procedure libraries (public or internal).
-Keep a local copy of the procedures you use in a `.procedures/` directory at the repo root and add it to the repo’s `.gitignore`.
+In target repos, use `.methodologies/idd/library/procedures/` as the procedures folder and add procedures from additional libraries into that same folder as needed.
 
 Developers can safely discard chat history, knowing agents running procedures have persisted what matters into various IDD artifacts.
 

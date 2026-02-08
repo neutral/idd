@@ -13,7 +13,9 @@ Arc provides the operating loop for sizing, sequencing, and executing work at a 
 ## This Repo
 
 - The `methodology/` folder contains templates and guidance for IDD artifacts and organization.
-- The `setup/` folder contains guides for setting up IDD (Intent + Blueprint) in a target repo.
+- The `library/` folder contains IDD procedures and supporting shared files.
+- The `setup/` folder contains `setup/idd-setup.md` for installing and bootstrapping IDD in a target repo.
+- The `scripts/` folder contains `scripts/copy-idd.sh` to copy IDD into `.methodologies/idd/` and initialize `status.md`.
 
 ## Open Source
 

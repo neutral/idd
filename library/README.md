@@ -1,8 +1,8 @@
 # Procedures
 
-Procedures are reusable prompts designed for Intent-Driven Development (IDD). They capture a working process in a repeatable format so developers can trigger a workflow with a standard invocation by simply naming the procedure they want an agent to run. Agents run procedures to read IDD artifacts as inputs and write durable updates back as outputs (Intent, Blueprint, and Code). Running procedures reduces freeform chat and keeps work reproducible by making context and outcomes explicit.
+This folder contains the IDD procedure library. Procedures are reusable prompts that capture repeatable workflows and write durable updates back to artifacts.
 
-This repo is a public library of procedures. Developers can also use one or more additional procedure libraries (public or internal) and install procedures from any of them into a project.
+Developers can also use one or more additional procedure libraries (public or internal) and keep imported procedures in the same target repo procedures folder.
 
 ## Procedure format
 
@@ -32,21 +32,6 @@ Developers pull the procedures they need from this library into their codebase r
 
 ## Using procedures in a project
 
-Keep a local copy of the procedures you want an agent to run (from one or more libraries) in a `.procedures/` directory at the repo root. Copy any needed shared files from `common/` into each local procedure folder (for example, pick a template from `common/guidelines/` such as `style-balanced.md` and copy it as `style.md`, or copy `common/tools/verify-blueprint-links.sh` into `scripts/`). Add `.procedures/` to the repo's `.gitignore`.
+Use `.methodologies/idd/library/procedures/` as the procedures folder in target repos. Keep all procedures in this single folder, including procedures imported from additional libraries. Copy any needed shared files from `common/` into each procedure folder (for example, pick a template from `common/guidelines/` such as `style-balanced.md` and copy it as `style.md`, or copy `common/tools/verify-blueprint-links.sh` into `scripts/`).
 
-Because `.procedures/` is not committed, record the procedure(s) used (and the library version or commit) in the Arc Step "Procedure Log" so others can reproduce the workflow.
-
-## 🤝 Contributing
-
-Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-Source code files should include `SPDX-License-Identifier: (CC0-1.0 OR 0BSD)` where applicable.
-
-## License
-
-This project is released under a dual-license model. Choose either:
-
-- **[CC0-1.0](LICENSE.CC0-1.0)** - Creative Commons Zero v1.0 Universal
-- **[0BSD](LICENSE.0BSD)** - Zero-Clause BSD
-
-This applies to all project materials.
+Because this folder can include local edits and mixed sources, record the procedure(s) used (and source/library version or commit) in the Arc Step "Procedure Log" so others can reproduce the workflow.

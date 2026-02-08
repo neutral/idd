@@ -70,7 +70,7 @@ Arc work lives in `intents/arc/` as the single in-progress arc for the current b
 
 ## Procedures
 
-Procedures remain in a local `.procedures/` folder at the repo root (or another local procedure folder). When agents run procedures, they read from the Intent/Blueprint layers and write back before ending.
+Procedures in target repos live in `.methodologies/idd/library/procedures/`. This folder is editable and can include procedures from multiple sources. When agents run procedures, they read from the Intent/Blueprint layers and write back before ending.
 
 ## Descriptions
 
