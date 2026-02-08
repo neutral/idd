@@ -1,4 +1,4 @@
-# Agent Notes (idd)
+# Agent Notes
 
 ## Markdown linting
 

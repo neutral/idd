@@ -24,7 +24,7 @@ Add `--delete` to remove files in target methodology/library folders that no lon
 
 The helper also:
 
-- Creates `.methodologies/idd/workflow/` (placeholder runtime folder).
+- Creates `.methodologies/idd/scratch/` (optional methodology-defined scratch area).
 - Creates/updates `.methodologies/idd/.gitignore` to ignore downloaded `methodology/` and `library/`.
 - Creates `.methodologies/idd/status.md` (if missing) and records primary methodology/library source paths under `Sources`.
 - Initializes a `Permissions` section in `.methodologies/idd/status.md` (`read and write allowed`, `read-only`, `no access`).

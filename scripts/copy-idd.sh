@@ -40,7 +40,7 @@ source_library="$source_root/library"
 target_idd_root="$target_repo/.methodologies/idd"
 target_methodology="$target_idd_root/methodology"
 target_library="$target_idd_root/library"
-target_workflow="$target_idd_root/workflow"
+target_scratch="$target_idd_root/scratch"
 target_gitignore="$target_idd_root/.gitignore"
 target_status="$target_idd_root/status.md"
 
@@ -54,7 +54,7 @@ if [[ ! -d "$source_library" ]]; then
   exit 1
 fi
 
-mkdir -p "$target_methodology" "$target_library" "$target_workflow"
+mkdir -p "$target_methodology" "$target_library" "$target_scratch"
 
 write_gitignore() {
   if [[ ! -f "$target_gitignore" ]]; then
