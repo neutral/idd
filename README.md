@@ -1,37 +1,58 @@
 # Intent-Driven Development (IDD)
 
-Intent-Driven Development (IDD) is a software development methodology designed to accelerate delivery with agentic coding tools. It does this by explicitly capturing Intent (what the user needs) and using that Intent to generate Code that matches it—reliably and within organizational constraints.
+IDD is a methodology for agent-assisted software development that keeps user
+intent, implementation contracts, and code aligned as work changes.
 
-IDD improves speed and correctness by front-loading the work that typically causes churn in AI-assisted development: missing context, unclear requirements, inconsistent assumptions, and ambiguous acceptance criteria. When Intent and implementation constraints are captured cleanly, teams spend less time reviewing and rewriting generated output—and more time shipping.
+## Start Here
 
-IDD organizes context so both developers and agents can prompt effectively, operate predictably, and produce software that can also be rapidly updated later with new requirements. It also maximizes correctness within today’s limited context sizes and reasoning windows by creating and maintaining a small set of high-signal artifacts that can be fed into agentic coding tools.
+- Read [methodology/IDD.md](methodology/IDD.md) for the IDD model, boundaries,
+  and companion documents.
+- Use [methodology/ARC.md](methodology/ARC.md) as the runtime entrypoint when
+  executing or resuming an IDD run.
+- Use [setup/idd-setup.md](setup/idd-setup.md) to install IDD into a target
+  repo.
+- Use [library/overview.md](library/overview.md) when you need local library
+  guidance such as pass support or claim support.
+- Run `scripts/verify-idd.sh` from this source repo to verify the source
+  package or an installed target repo.
 
-At its core, IDD is a deliberate information-gathering and codification practice that keeps pace with shifting user needs. Intent files and Blueprint files are the sources of truth; code is the implementation output.
+## What IDD Optimizes
 
-Arc provides the operating loop for sizing, sequencing, and executing work at a predictable cadence across humans and agents.
+- Durable product context in Intent and Blueprint artifacts instead of
+  chat-only context.
+- Explicit contracts that tell agents what must be true before code is
+  generated or changed.
+- Bounded runtime execution through Arc so a run can be resumed, reviewed, and
+  audited without guessing.
 
-## This Repo
+## Repository Surfaces
 
-- The `methodology/` folder contains templates and guidance for IDD artifacts and organization.
-- The `library/` folder contains IDD procedures and supporting shared files.
-- The `setup/` folder contains `setup/idd-setup.md` for installing and bootstrapping IDD in a target repo.
-- The `scripts/` folder contains `scripts/copy-idd.sh` to copy IDD into `.methodologies/idd/` and initialize `status.md`.
+- `methodology/`: the core IDD contract set, including `IDD.md`, `ARC.md`,
+  `ARTIFACTS.md`, `LIBRARY.md`, `LABELS.md`, Arc contracts, templates, and
+  artifact guidance.
+- `library/`: the starter runtime library entrypoint plus the IDD pass catalog
+  for authoring quality across the Intent pipeline and the claim catalog for
+  Arc-scoped evidence, including `pass-effect`.
+- `setup/`: installation and bootstrap guidance for target repos.
+- `scripts/`: helper scripts for install and verification.
 
-## Open Source
+## Open Source Use
 
-IDD can further democratize open-source software. When an open-source repository includes well-defined Intent files and Blueprint files, contributors and downstream users can:
+IDD helps open-source repos publish durable product intent alongside code.
+That makes it easier for contributors and downstream users to understand what
+the system is supposed to do, change behavior safely, and participate without
+reverse-engineering the implementation first.
 
-- Understand “what the software is supposed to do” without reverse-engineering code
-- Customize behavior safely by changing Intent/Blueprint and regenerating the implementation
-- Participate meaningfully even if they are unfamiliar with the codebase internals
-
-In other words: clear Intent + Blueprint artifacts make customization and contribution substantially more accessible.
-
-## 🤝 Contributing
+## Contributing
 
 Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-Source code files should include `SPDX-License-Identifier: (CC0-1.0 OR 0BSD)` where applicable.
+Run `scripts/verify-idd.sh` and
+`npx --yes markdownlint-cli --disable MD013 -- "**/*.md"` before opening a
+pull request.
+
+Source code files should include `SPDX-License-Identifier: (CC0-1.0 OR 0BSD)`
+where applicable.
 
 ## License
 
